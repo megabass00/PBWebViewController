@@ -77,15 +77,16 @@
 {
     [super viewDidLoad];
     [self setupToolBarItems];
+    
+    if (self.URL) {
+        [self load];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.webView.delegate = self;
-    if (self.URL) {
-        [self load];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
